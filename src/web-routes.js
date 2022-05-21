@@ -21,4 +21,6 @@ export const webRoutes = [
 
   { method: "GET", path: "/poi/{id}/editpoi/{poiid}", config: poiController.index },
   { method: "POST", path: "/poi/{id}/updatepoi/{poiid}", config: poiController.update },
+
+  { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
 ];
