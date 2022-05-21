@@ -43,6 +43,7 @@ Every spot can be given a name, description and coordinates (latitude, longitude
 
 - Git + commit History
 - Structured README
+- Tagged Releases
 - Development / Feature / Master branch
 
 ## Technologies used in the project
