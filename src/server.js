@@ -32,7 +32,7 @@ if (result.error) {
 async function init() {
   const server = Hapi.server({
     port: 3000,
-    host: "localhost",
+    host: "127.0.0.1",
   });
   await server.register(Vision);
   await server.register(Cookie);
