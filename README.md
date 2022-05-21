@@ -1,9 +1,9 @@
 # Placemark
 
-David Junker
-Ostbayerische Technische Hochschule Regensburg
-Business informatics, semester 6
-Advanced Full Stack Development
+David Junker -
+Ostbayerische Technische Hochschule Regensburg -
+Business informatics, semester 6 -
+Advanced Full Stack Development -
 Assingment 1
 
 ## Project Description:
@@ -13,7 +13,7 @@ Every spot can be given a name, description and coordinates (latitude, longitude
 
 ## Project Releases
 
-#### Release 1
+### Release 1
 
 <b>Accounts:</b>
 
@@ -47,7 +47,7 @@ Every spot can be given a name, description and coordinates (latitude, longitude
 
 ## Technologies used in the project
 
-- node.js
+- Node.js
 - Hapi
 - Handlebars
 - MongoDB
