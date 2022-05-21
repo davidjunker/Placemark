@@ -1,7 +1,7 @@
 import { assert } from "chai";
 import { assertSubset } from "../test-utils.js";
 import { placemarkService } from "./placemark-service.js";
-import { maggie, testUsers } from "../fixtures.js";
+import { maggie, maggieCredentials, testUsers } from "../fixtures.js";
 import { db } from "../../src/models/db.js";
 
 suite("User API tests", () => {
