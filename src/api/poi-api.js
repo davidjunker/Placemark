@@ -5,7 +5,9 @@ import { validationError } from "./logger.js";
 
 export const poiApi = {
   find: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const pois = await db.poiStore.getAllPois();
@@ -21,7 +23,9 @@ export const poiApi = {
   },
 
   findOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     async handler(request) {
       try {
         const poi = await db.poiStore.getPoiById(request.params.id);
@@ -41,7 +45,9 @@ export const poiApi = {
   },
 
   create: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const poi = await db.poiStore.addPoi(request.params.id, request.payload);
@@ -61,7 +67,9 @@ export const poiApi = {
   },
 
   deleteOne: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         const poi = await db.poiStore.getPoiById(request.params.id);
@@ -80,7 +88,9 @@ export const poiApi = {
   },
 
   deleteAll: {
-    auth: false,
+    auth: {
+      strategy: "jwt",
+    },
     handler: async function (request, h) {
       try {
         await db.poiStore.deleteAllPois();
