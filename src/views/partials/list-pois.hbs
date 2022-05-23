@@ -6,6 +6,7 @@
       <th>Latitude</th>
       <th>Longitude</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -22,6 +23,11 @@
         </td>
         <td>
           {{longitude}}
+        </td>
+        <td>
+          <a href="/poi/{{_id}}" class="ui icon button">
+            <i class="fas fa-folder-open"></i>
+          </a>
         </td>
         <td>
           <a href="/category/{{../category._id}}/deletepoi/{{_id}}" class="ui icon button">
