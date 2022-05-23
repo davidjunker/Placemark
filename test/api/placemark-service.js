@@ -1,4 +1,6 @@
 import axios from "axios";
+import FormData from "form-data";
+import { createReadStream } from "fs";
 import { serviceUrl } from "../fixtures.js";
 
 export const placemarkService = {
@@ -71,6 +73,11 @@ export const placemarkService = {
 
   async deletePoi(id) {
     const res = await axios.delete(`${this.placemarkUrl}/api/pois/${id}`);
+    return res.data;
+  },
+
+  async getAllImages() {
+    const res = await axios.get(`${this.placemarkUrl}/api/images`);
     return res.data;
   },
 

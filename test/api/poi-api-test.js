@@ -24,7 +24,7 @@ suite("Poi API tests", () => {
 
   test("create poi", async () => {
     const returnedPoi = await placemarkService.createPoi(mountainCategory._id, rockyMountains);
-    assertSubset(mountains, returnedPoi);
+    assertSubset(rockyMountains, returnedPoi);
   });
 
   test("create Multiple pois", async () => {
