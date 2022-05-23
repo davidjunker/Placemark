@@ -80,3 +80,23 @@ export const testPois = [
     longitude: -105.68,
   },
 ];
+
+export const imageOne = {
+  img: "http://res.cloudinary.com/dgt12krnq/image/upload/v1653305374/l8g5kbztpmt3pcgcnngs.jpg",
+  imgid: "l8g5kbztpmt3pcgcnngs",
+};
+
+export const testImages = [
+  {
+    img: "http://res.cloudinary.com/dgt12krnq/image/upload/v1653305374/l8g5kbztpmt3pcgcnngs.jpg",
+    imgid: "l8g5kbztpmt3pcgcnngs",
+  },
+  {
+    img: "http://res.cloudinary.com/dgt12krnq/image/upload/v1653305374/l8g5kbztpmt3pcgcnngs.jpg",
+    imgid: "l8g5kbztpmt3pcgcnngs",
+  },
+  {
+    img: "http://res.cloudinary.com/dgt12krnq/image/upload/v1653305374/l8g5kbztpmt3pcgcnngs.jpg",
+    imgid: "l8g5kbztpmt3pcgcnngs",
+  },
+];
