@@ -11,7 +11,51 @@ Assingment 1
 Placemark is an application for people to track their favourite spots all around the world. These spots can be categorized into for example: Mountains, Waters, Cities, Beaches, ...
 Every spot can be given a name, description and coordinates (latitude, longitude).
 
+## Deployment
+
+<b>Heroku:</b> https://stark-plains-47911.herokuapp.com/
+
 ## Project Releases
+
+### Release 2
+
+<b>Accounts:</b>
+
+- Signup / Login
+- Cookie Authentication / User Settings
+- Basic Admin Account, List/Remove Users
+- Admin Dashboard + analytics
+
+<b>Placemark Features:</b>
+
+- Name
+- Description, Location (lat, lng)
+- Categories
+- Images (One image for category and multiple images for poi)
+
+<b>API:</b>
+
+- Basic API (addition: analytics-api and poi-image-api)
+- Unit Tests
+- Open API (Swagger)
+- JWT
+
+<b>Models:</b>
+
+- Mongo DB
+
+<b>Deployment:</b>
+
+- Localhost
+- Cloud Atlas
+- Heroku (https://stark-plains-47911.herokuapp.com/)
+
+<b>Git:</b>
+
+- Git + commit History
+- Structured README
+- Tagged Releases
+- Development / Feature / Master branch
 
 ### Release 1
 
@@ -35,7 +79,7 @@ Every spot can be given a name, description and coordinates (latitude, longitude
 
 - Mongo DB
 
-<b>Deployment</b>
+<b>Deployment:</b>
 
 - Localhost
 
@@ -51,6 +95,8 @@ Every spot can be given a name, description and coordinates (latitude, longitude
 - Node.js
 - Hapi
 - Handlebars
+- Heroku
+- MongoDB Atlas
 - MongoDB
 - Mongoose
 - Git/Github
@@ -59,3 +105,10 @@ Every spot can be given a name, description and coordinates (latitude, longitude
 - Mocha
 - Bulma
 - Fontawesome
+- ESLint
+- Nodemon
+- Prettier
+- Cloudinary
+- JWT
+- Joi
+- Swagger
