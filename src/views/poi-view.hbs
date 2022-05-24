@@ -1,0 +1,17 @@
+{{> menu}}
+
+<section class="section columns is-vcentered">
+  <div class="column has-text-centered">
+    <div class="title">
+      {{poi.name}}
+    </div>
+    <div>Description: {{poi.description}}</div>
+    <div>Latitude: {{poi.latitude}}</div>
+    <div>Longitude: {{poi.longitude}}</div>
+  </div>
+  <div class="column">
+    {{> add-poi-image}}
+  </div>
+</section>
+
+{{> list-images}}

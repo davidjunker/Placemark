@@ -7,7 +7,7 @@ suite("Poi Model tests", () => {
   let mountainList = null;
 
   setup(async () => {
-    db.init("mongo");
+    db.init();
     await db.categoryStore.deleteAllCategories();
     await db.poiStore.deleteAllPois();
     mountainList = await db.categoryStore.addCategory(mountains);
@@ -43,7 +43,7 @@ suite("Poi Model tests", () => {
     const id = testPois[0]._id;
     await db.poiStore.deletePoi(id);
     const pois = await db.poiStore.getAllPois();
-    assert.equal(pois.length, testCategories.length - 1);
+    assert.equal(pois.length, testPois.length - 1);
     const deletedPoi = await db.poiStore.getPoiById(id);
     assert.isNull(deletedPoi);
   });
@@ -56,6 +56,6 @@ suite("Poi Model tests", () => {
   test("delete One Poi - fail", async () => {
     await db.poiStore.deletePoi("bad-id");
     const pois = await db.poiStore.getAllPois();
-    assert.equal(pois.length, testCategories.length);
+    assert.equal(pois.length, testPois.length);
   });
 });

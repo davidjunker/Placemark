@@ -18,9 +18,14 @@ export const webRoutes = [
   { method: "GET", path: "/category/{id}", config: categoryController.index },
   { method: "POST", path: "/category/{id}/addpoi", config: categoryController.addPoi },
   { method: "GET", path: "/category/{id}/deletepoi/{poiid}", config: categoryController.deletePoi },
+  { method: "POST", path: "/category/{id}/uploadimage", config: categoryController.uploadImage },
+  { method: "GET", path: "/category/{id}/deleteimage", config: categoryController.deleteImage },
 
+  { method: "GET", path: "/poi/{id}", config: poiController.index },
   { method: "GET", path: "/poi/{id}/editpoi/{poiid}", config: poiController.index },
   { method: "POST", path: "/poi/{id}/updatepoi/{poiid}", config: poiController.update },
+  { method: "POST", path: "/poi/{id}/uploadimage", config: poiController.uploadImage },
+  { method: "GET", path: "/poi/{id}/deleteimage/{imgid}", config: poiController.deleteImage },
 
   { method: "GET", path: "/{param*}", handler: { directory: { path: "./public" } }, options: { auth: false } },
 ];

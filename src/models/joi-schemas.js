@@ -21,6 +21,21 @@ export const UserSpecPlus = UserSpec.keys({
 
 export const UserArray = Joi.array().items(UserSpecPlus).label("UserArray");
 
+export const ImageSpec = Joi.object()
+  .keys({
+    img: Joi.string().example("http://res.cloudinary.com/dgt12krnq/image/upload/v1653305374/l8g5kbztpmt3pcgcnngs.jpg").required(),
+    imgid: Joi.string().example("l8g5kbztpmt3pcgcnngs").required(),
+    poiid: IdSpec,
+  })
+  .label("Image");
+
+export const ImageSpecPlus = ImageSpec.keys({
+  _id: IdSpec,
+  __v: Joi.number(),
+}).label("ImagePlus");
+
+export const ImageArraySpec = Joi.array().items(ImageSpecPlus).label("ImageArray");
+
 export const PoiSpec = Joi.object()
   .keys({
     name: Joi.string().example("Rocky Mountain National Park").required(),
@@ -28,6 +43,7 @@ export const PoiSpec = Joi.object()
     latitude: Joi.number().example(40.34).required(),
     longitude: Joi.number().example(-105.68).required(),
     categoryid: IdSpec,
+    images: ImageArraySpec,
   })
   .label("Poi");
 

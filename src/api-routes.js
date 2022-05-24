@@ -1,6 +1,7 @@
 import { userApi } from "./api/user-api.js";
 import { categoryApi } from "./api/category-api.js";
 import { poiApi } from "./api/poi-api.js";
+import { poiImageApi } from "./api/poi-image-api.js";
 
 export const apiRoutes = [
   { method: "GET", path: "/api/users", config: userApi.find },
@@ -19,6 +20,12 @@ export const apiRoutes = [
   { method: "POST", path: "/api/categories/{id}/pois", config: poiApi.create },
   { method: "DELETE", path: "/api/pois", config: poiApi.deleteAll },
   { method: "DELETE", path: "/api/pois/{id}", config: poiApi.deleteOne },
+
+  { method: "GET", path: "/api/images", config: poiImageApi.find },
+  { method: "GET", path: "/api/images/{id}", config: poiImageApi.findOne },
+  { method: "POST", path: "/api/pois/{id}/images", config: poiImageApi.create },
+  { method: "DELETE", path: "/api/images", config: poiImageApi.deleteAll },
+  { method: "DELETE", path: "/api/images/{id}", config: poiImageApi.deleteOne },
 
   { method: "POST", path: "/api/users/authenticate", config: userApi.authenticate },
 ];
