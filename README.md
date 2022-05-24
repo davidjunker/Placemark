@@ -13,7 +13,7 @@ Every spot can be given a name, description and coordinates (latitude, longitude
 
 ## Deployment
 
-<b>Heroku:<b> https://stark-plains-47911.herokuapp.com/
+<b>Heroku:</b> https://stark-plains-47911.herokuapp.com/
 
 ## Project Releases
 
