@@ -58,6 +58,8 @@ export const PoiArraySpec = Joi.array().items(PoiSpecPlus).label("PoiArray");
 export const CategorySpec = Joi.object()
   .keys({
     title: Joi.string().example("Mountains").required(),
+    img: Joi.string().example("http://res.cloudinary.com/dgt12krnq/image/upload/v1653394810/qbkrfajcubzxnudvhh7r.webp"),
+    imgid: Joi.string().example("qbkrfajcubzxnudvhh7r"),
     userid: IdSpec,
     pois: PoiArraySpec,
   })
@@ -69,6 +71,25 @@ export const CategorySpecPlus = CategorySpec.keys({
 }).label("CategoryPlus");
 
 export const CategoryArraySpec = Joi.array().items(CategorySpecPlus).label("CategoryArray");
+
+export const statsSpec = Joi.object()
+  .keys({
+    averageCategoriesPerUser: Joi.number().example(3),
+    averagePoisPerUser: Joi.number().example(5),
+    averagePoisPerCategory: Joi.number().example(2),
+    leastCategories: Joi.number().example(0),
+    mostCategories: Joi.number().example(10),
+  })
+  .label("Stats");
+
+export const AnalyticsSpec = Joi.object()
+  .keys({
+    users: UserArray,
+    categories: CategoryArraySpec,
+    pois: PoiArraySpec,
+    stats: statsSpec,
+  })
+  .label("Analytics");
 
 export const JwtAuth = Joi.object()
   .keys({

@@ -42,6 +42,15 @@ suite("User API tests", () => {
     assert.deepEqual(users[0], returnedUser);
   });
 
+  test("delete a user", async () => {
+    const user = await placemarkService.getUser(users[0]._id);
+    const allUsers = await placemarkService.getAllUsers();
+    assert.equal(allUsers.length, 4);
+    await placemarkService.deleteUser(user._id);
+    const returnedUsers = await placemarkService.getAllUsers();
+    assert.equal(returnedUsers.length, 3);
+  });
+
   test("get a user - bad id", async () => {
     try {
       const returnedUser = await placemarkService.getUser("1234");
@@ -63,5 +72,14 @@ suite("User API tests", () => {
       assert(error.response.data.message === "No User with this id");
       assert.equal(error.response.data.statusCode, 404);
     }
+  });
+
+  test("update a user", async () => {
+    const newUser = await placemarkService.createUser(maggie);
+    maggie.firstName = "margold";
+    newUser.firstName = "margold";
+    const updatedUser = await placemarkService.updateUser(newUser._id, maggie);
+    const getUpdatedUser = await placemarkService.getUser(newUser._id);
+    assertSubset(getUpdatedUser, updatedUser);
   });
 });
