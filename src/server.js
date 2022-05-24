@@ -9,6 +9,7 @@ import dotenv from "dotenv";
 import HapiSwagger from "hapi-swagger";
 import jwt from "hapi-auth-jwt2";
 import * as hacli from "@antoniogiordano/hacli";
+import hapiError from "hapi-error";
 import { fileURLToPath } from "url";
 import { webRoutes } from "./web-routes.js";
 import { apiRoutes } from "./api-routes.js";
@@ -64,6 +65,7 @@ async function init() {
       permissions: ["ADMIN", "USER"],
     },
   });
+  await server.register(hapiError);
   server.validator(Joi);
   server.views({
     engines: {
