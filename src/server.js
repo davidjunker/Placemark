@@ -43,8 +43,7 @@ if (result.error) {
 
 async function init() {
   const server = Hapi.server({
-    port: 8080,
-    host: "127.0.0.1",
+    port: process.env.PORT || 8080,
     routes: { cors: { origin: ["*"] } },
   });
   await server.register(Vision);
