@@ -32,6 +32,7 @@
     "prettier": "^2.6.2"
   },
   "dependencies": {
+    "@antoniogiordano/hacli": "^1.0.2",
     "@hapi/boom": "^9.1.4",
     "@hapi/cookie": "^11.0.2",
     "@hapi/hapi": "^20.2.2",
@@ -42,6 +43,7 @@
     "form-data": "^4.0.0",
     "handlebars": "^4.7.7",
     "hapi-auth-jwt2": "^10.2.0",
+    "hapi-error": "^2.3.0",
     "hapi-swagger": "^14.5.0",
     "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
