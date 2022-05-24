@@ -1,4 +1,6 @@
 import axios from "axios";
+import FormData from "form-data";
+import { createReadStream } from "fs";
 import { serviceUrl } from "../fixtures.js";
 
 export const placemarkService = {
@@ -21,6 +23,16 @@ export const placemarkService = {
 
   async deleteAllUsers() {
     const res = await axios.delete(`${this.placemarkUrl}/api/users`);
+    return res.data;
+  },
+
+  async deleteUser(id) {
+    const res = await axios.delete(`${this.placemarkUrl}/api/users/${id}`);
+    return res.data;
+  },
+
+  async updateUser(id, user) {
+    const res = await axios.put(`${this.placemarkUrl}/api/users/${id}`, user);
     return res.data;
   },
 
@@ -72,5 +84,15 @@ export const placemarkService = {
   async deletePoi(id) {
     const res = await axios.delete(`${this.placemarkUrl}/api/pois/${id}`);
     return res.data;
+  },
+
+  async authenticate(user) {
+    const response = await axios.post(`${this.placemarkUrl}/api/users/authenticate`, user);
+    axios.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
+    return response.data;
+  },
+
+  async clearAuth() {
+    axios.defaults.headers.common.Authorization = "";
   },
 };

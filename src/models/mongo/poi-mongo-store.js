@@ -1,4 +1,5 @@
 import { Poi } from "./poi.js";
+import { imageMongoStore } from "./image-mongo-store.js";
 
 export const poiMongoStore = {
   async getAllPois() {
@@ -21,6 +22,9 @@ export const poiMongoStore = {
   async getPoiById(id) {
     if (id) {
       const poi = await Poi.findOne({ _id: id }).lean();
+      if (poi) {
+        poi.images = await imageMongoStore.getImagesByPoiId(poi._id);
+      }
       return poi;
     }
     return null;

@@ -1,18 +1,21 @@
 import { assert } from "chai";
 import { assertSubset } from "../test-utils.js";
 import { placemarkService } from "./placemark-service.js";
-import { maggie, rockyMountains, testPois, mountains } from "../fixtures.js";
+import { maggie, maggieCredentials, rockyMountains, testPois, mountains } from "../fixtures.js";
 
 suite("Poi API tests", () => {
   let user = null;
   let mountainCategory = null;
 
   setup(async () => {
+    placemarkService.clearAuth();
     user = await placemarkService.createUser(maggie);
+    await placemarkService.authenticate(maggieCredentials);
     await placemarkService.deleteAllCategories();
     await placemarkService.deleteAllPois();
     await placemarkService.deleteAllUsers();
     user = await placemarkService.createUser(maggie);
+    await placemarkService.authenticate(maggieCredentials);
     mountains.userid = user._id;
     mountainCategory = await placemarkService.createCategory(mountains);
   });
@@ -21,7 +24,7 @@ suite("Poi API tests", () => {
 
   test("create poi", async () => {
     const returnedPoi = await placemarkService.createPoi(mountainCategory._id, rockyMountains);
-    assertSubset(mountains, returnedPoi);
+    assertSubset(rockyMountains, returnedPoi);
   });
 
   test("create Multiple pois", async () => {
