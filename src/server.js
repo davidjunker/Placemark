@@ -8,6 +8,7 @@ import Joi from "joi";
 import dotenv from "dotenv";
 import HapiSwagger from "hapi-swagger";
 import jwt from "hapi-auth-jwt2";
+import * as hacli from "@antoniogiordano/hacli";
 import { fileURLToPath } from "url";
 import { webRoutes } from "./web-routes.js";
 import { apiRoutes } from "./api-routes.js";
@@ -57,6 +58,12 @@ async function init() {
       options: swaggerOptions,
     },
   ]);
+  await server.register({
+    plugin: hacli,
+    options: {
+      permissions: ["ADMIN", "USER"],
+    },
+  });
   server.validator(Joi);
   server.views({
     engines: {

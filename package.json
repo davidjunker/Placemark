@@ -32,6 +32,7 @@
     "prettier": "^2.6.2"
   },
   "dependencies": {
+    "@antoniogiordano/hacli": "^1.0.2",
     "@hapi/boom": "^9.1.4",
     "@hapi/cookie": "^11.0.2",
     "@hapi/hapi": "^20.2.2",

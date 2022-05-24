@@ -1,0 +1,52 @@
+{{> menu active="admin-dashboard"}}
+
+<section class="section">
+    <h1 class="title">User List</h1>
+   {{> list-users}}
+</section>
+
+<section class="section">
+    <h1 class="title">Analytics</h1>
+    <table class="table is-fullwidth">
+        <thead>
+            <tr>
+            <th>Stat</th>
+            <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Users</td>
+                <td>{{users.length}}</td>
+            </tr>
+            <tr>
+                <td>Categories</td>
+                <td>{{categories.length}}</td>
+            </tr>
+            <tr>
+                <td>Pois</td>
+                <td>{{pois.length}}</td>
+            </tr>
+            <tr>
+                <td>Average categories per user</td>
+                <td>{{stats.averageCategoriesPerUser}}</td>
+            </tr>
+            <tr>
+                <td>Average pois per user</td>
+                <td>{{stats.averagePoisPerUser}}</td>
+            </tr>
+            <tr>
+                <td>Average pois per category</td>
+                <td>{{stats.averagePoisPerCategory}}</td>
+            </tr>
+            <tr>
+                <td>Least categories</td>
+                <td>{{stats.leastCategories}}</td>
+            </tr>
+            <tr>
+                <td>Most categories</td>
+                <td>{{stats.mostCategories}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
