@@ -65,6 +65,27 @@ export const userApi = {
     response: { schema: UserSpecPlus, failAction: validationError },
   },
 
+  deleteOne: {
+    auth: {
+      strategy: "jwt",
+    },
+    handler: async function (request, h) {
+      try {
+        const user = await db.userStore.getUserById(request.params.id);
+        if (!user) {
+          return Boom.notFound("No User with this id");
+        }
+        await db.userStore.deleteUserById(user._id);
+        return h.response().code(204);
+      } catch (err) {
+        return Boom.serverUnavailable("No User with this id");
+      }
+    },
+    tags: ["api"],
+    description: "Delete one user",
+    notes: "Removes one user",
+  },
+
   deleteAll: {
     auth: {
       strategy: "jwt",
@@ -80,6 +101,35 @@ export const userApi = {
     tags: ["api"],
     description: "Delete all users",
     notes: "All users removed from Placemark",
+  },
+
+  updateUser: {
+    auth: {
+      strategy: "jwt",
+    },
+    handler: async function (request, h) {
+      try {
+        const user = await db.userStore.getUserById(request.params.id);
+        if (!user) {
+          return Boom.notFound("No User with this id");
+        }
+        const updatedUser = {
+          firstName: request.payload.firstName,
+          lastName: request.payload.lastName,
+          email: request.payload.email,
+          password: request.payload.password,
+        };
+        await db.userStore.updateUser(user._id, updatedUser);
+        return h.response(updatedUser).code(204);
+      } catch (err) {
+        return Boom.serverUnavailable("No User with this id");
+      }
+    },
+    tags: ["api"],
+    description: "update a specific user",
+    notes: "Returns updated user details",
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: UserSpecPlus, failAction: validationError },
   },
 
   authenticate: {
