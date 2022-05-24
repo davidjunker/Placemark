@@ -76,11 +76,6 @@ export const placemarkService = {
     return res.data;
   },
 
-  async getAllImages() {
-    const res = await axios.get(`${this.placemarkUrl}/api/images`);
-    return res.data;
-  },
-
   async authenticate(user) {
     const response = await axios.post(`${this.placemarkUrl}/api/users/authenticate`, user);
     axios.defaults.headers.common.Authorization = `Bearer ${response.data.token}`;
