@@ -43,6 +43,7 @@ async function init() {
   const server = Hapi.server({
     port: 8080,
     host: "127.0.0.1",
+    routes: { cors: { origin: ["*"] } },
   });
   await server.register(Vision);
   await server.register(Cookie);

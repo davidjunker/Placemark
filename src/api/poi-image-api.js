@@ -67,10 +67,15 @@ export const poiImageApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    payload: {
+      multipart: true,
+      output: "data",
+      maxBytes: 209715200,
+      parse: true,
+    },
     tags: ["api"],
     description: "Create an image",
     notes: "Returns the newly created image",
-    validate: { payload: ImageSpec },
     response: { schema: ImageSpecPlus, failAction: validationError },
   },
 
@@ -80,7 +85,7 @@ export const poiImageApi = {
     },
     handler: async function (request, h) {
       try {
-        const image = await db.imageStore.getImageById(request.params.imgid);
+        const image = await db.imageStore.getImageById(request.params.id);
         if (!image) {
           return Boom.notFound("No image with this id");
         }
