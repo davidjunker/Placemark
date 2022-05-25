@@ -60,7 +60,7 @@ export const poiImageApi = {
         const image = { img: response.url, imgid: response.public_id, poiid: request.params.id };
         const returnedImage = await db.imageStore.addImage(request.params.id, image);
         if (returnedImage) {
-          return h.response(poi).code(201);
+          return h.response().code(201);
         }
         return Boom.badImplementation("error creating image");
       } catch (err) {
