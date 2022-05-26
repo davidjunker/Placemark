@@ -21,6 +21,7 @@ export const analyticsApi = {
         const users = await db.userStore.getAllUsers();
         const categories = await db.categoryStore.getAllCategories();
         const pois = await db.poiStore.getAllPois();
+        const images = await db.imageStore.getAllImages();
         const stats = await analytics.calculateAnalytics();
         const viewData = {
           users: users,

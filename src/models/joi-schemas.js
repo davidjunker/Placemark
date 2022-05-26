@@ -87,6 +87,7 @@ export const AnalyticsSpec = Joi.object()
     users: UserArray,
     categories: CategoryArraySpec,
     pois: PoiArraySpec,
+    images: ImageArraySpec,
     stats: statsSpec,
   })
   .label("Analytics");
