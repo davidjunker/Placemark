@@ -27,6 +27,7 @@ export const analyticsApi = {
           users: users,
           categories: categories,
           pois: pois,
+          images: images,
           stats: stats,
         };
         return viewData;
