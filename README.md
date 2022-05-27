@@ -17,6 +17,11 @@ Every spot can be given a name, description and coordinates (latitude, longitude
 
 ## Project Releases
 
+### Release 2.1
+
+- Improved API for frontend (Image-Api, Analytics-Api, User-Api)
+- Meets same requirements as Release 2
+
 ### Release 2
 
 <b>Accounts:</b>
