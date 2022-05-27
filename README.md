@@ -13,8 +13,8 @@ Every spot can be given a name, description and coordinates (latitude, longitude
 
 ## Deployment
 
-<b>Heroku:</b> https://stark-plains-47911.herokuapp.com/
-<b>Netlify:</b> https://rococo-tarsier-b8bb64.netlify.app/
+- <b>Heroku:</b> https://stark-plains-47911.herokuapp.com/
+- <b>Netlify:</b> https://rococo-tarsier-b8bb64.netlify.app/
 
 ## Project Releases
 
