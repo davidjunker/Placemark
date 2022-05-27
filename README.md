@@ -14,12 +14,14 @@ Every spot can be given a name, description and coordinates (latitude, longitude
 ## Deployment
 
 <b>Heroku:</b> https://stark-plains-47911.herokuapp.com/
+<b>Netlify:</b> https://rococo-tarsier-b8bb64.netlify.app/
 
 ## Project Releases
 
 ### Release 2.1
 
 - Improved API for frontend (Image-Api, Analytics-Api, User-Api)
+- React-Frontend (https://rococo-tarsier-b8bb64.netlify.app/)
 - Meets same requirements as Release 2
 
 ### Release 2
