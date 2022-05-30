@@ -33,12 +33,12 @@ export const seedData = {
       title: "Cities",
       userid: "->users.homer",
     },
-    categoryFour: {
-      title: "Caves",
+    categoryThree: {
+      title: "Forests",
       userid: "->users.marge",
     },
-    categoryFive: {
-      title: "Forests",
+    categoryFour: {
+      title: "Caves",
       userid: "->users.marge",
     },
   },
@@ -51,12 +51,74 @@ export const seedData = {
       longitude: -105.68,
       categoryid: "->categories.categoryOne",
     },
-    spotTwo: {
+    poiTwo: {
       name: "Zugspitze",
       description: "Highest Mounatin in Germany",
       latitude: 47.42,
       longitude: 10.98,
       categoryid: "->categories.categoryOne",
+    },
+    poiThree: {
+      name: "Regensburg",
+      description: "City in Germany",
+      latitude: 49.01,
+      longitude: 12.1,
+      categoryid: "->categories.categoryTwo",
+    },
+    poiFour: {
+      name: "Rainforest",
+      description: "Forest in Brasil",
+      latitude: -2.16,
+      longitude: -55.12,
+      categoryid: "->categories.categoryThree",
+    },
+  },
+  images: {
+    _model: "Image",
+    imageOne: {
+      img: "http://res.cloudinary.com/dgt12krnq/image/upload/v1653895767/tkyrjkedsesmsjwv3yru.jpg",
+      imgid: "tkyrjkedsesmsjwv3yru",
+      poiid: "->pois.poiOne",
+    },
+    imageTwo: {
+      img: "http://res.cloudinary.com/dgt12krnq/image/upload/v1653895827/h4tepenayuz1ec8hfgvb.webp",
+      imgid: "h4tepenayuz1ec8hfgvb",
+      poiid: "->pois.poiOne",
+    },
+    imageThree: {
+      img: "http://res.cloudinary.com/dgt12krnq/image/upload/v1653895870/ikibagowm5kbpmsqtbnt.jpg",
+      imgid: "ikibagowm5kbpmsqtbnt",
+      poiid: "->pois.poiOne",
+    },
+    imageFour: {
+      img: "http://res.cloudinary.com/dgt12krnq/image/upload/v1653896050/awck1o6y5brysuifxc7l.jpg",
+      imgid: "awck1o6y5brysuifxc7l",
+      poiid: "->pois.poiTwo",
+    },
+    imageFive: {
+      img: "http://res.cloudinary.com/dgt12krnq/image/upload/v1653896068/vsgeckjlvrdad8rnqgoe.jpg",
+      imgid: "vsgeckjlvrdad8rnqgoe",
+      poiid: "->pois.poiTwo",
+    },
+    imageSix: {
+      img: "http://res.cloudinary.com/dgt12krnq/image/upload/v1653896270/n9tmjqvpjjlklo9qdevf.jpg",
+      imgid: "n9tmjqvpjjlklo9qdevf",
+      poiid: "->pois.poiThree",
+    },
+    imageSeven: {
+      img: "http://res.cloudinary.com/dgt12krnq/image/upload/v1653896285/ozfwaxnfaffs0v8cuug1.jpg",
+      imgid: "ozfwaxnfaffs0v8cuug1",
+      poiid: "->pois.poiThree",
+    },
+    imageEight: {
+      img: "http://res.cloudinary.com/dgt12krnq/image/upload/v1653896791/gwh4suaodtyq1djtpjwe.jpg",
+      imgid: "gwh4suaodtyq1djtpjwe",
+      poiid: "->pois.poiFour",
+    },
+    imageNine: {
+      img: "http://res.cloudinary.com/dgt12krnq/image/upload/v1653896800/eopbmxypzhepph9nq366.jpg",
+      imgid: "eopbmxypzhepph9nq366",
+      poiid: "->pois.poiFour",
     },
   },
 };
